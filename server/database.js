@@ -1,5 +1,7 @@
 import sql from "mssql";
 
+// Errors will be handled within route handlers
+
 export default class Database {
   config = {};
   pool = null;
@@ -28,6 +30,7 @@ export default class Database {
       }
     } catch (err) {
       console.error(`error connecting to database: ${err.message}`);
+      throw err;
     }
   }
 
@@ -38,20 +41,18 @@ export default class Database {
       console.log("database connection closed");
     } catch (err) {
       console.error(`error closing database connection: ${err.message}`);
+      throw err;
     }
   }
 
   // query DB
   async query(stmt) {
-    try {
       await this.connect();
       const request = this.pool.request();
       const result = request.query(stmt);
       if (result.recordset) return result.recordset;
+      if (result.recordsets) return result.recordsets;
       return result.rowsAfected;
-    } catch (err) {
-      console.error(`error executing query: ${err.message}`);
-    }
   }
 
   // batch query
