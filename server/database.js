@@ -29,7 +29,7 @@ export default class Database {
         console.log("database already connected");
       }
     } catch (err) {
-      console.error(`error connecting to database: ${err.message}`);
+      console.error(`error connecting to database: ${err}`);
       throw err;
     }
   }
@@ -47,12 +47,12 @@ export default class Database {
 
   // query DB
   async query(stmt) {
-      await this.connect();
-      const request = this.pool.request();
-      const result = request.query(stmt);
-      if (result.recordset) return result.recordset;
-      if (result.recordsets) return result.recordsets;
-      return result.rowsAfected;
+    await this.connect();
+    const request = this.pool.request();
+    const result = request.query(stmt);
+    if (result.recordset) return result.recordset;
+    if (result.recordsets) return result.recordsets;
+    return result.rowsAfected;
   }
 
   // batch query

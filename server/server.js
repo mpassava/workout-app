@@ -9,10 +9,10 @@ const db = new Database(config);
 
 app.get("/", async (_, res) => {
   try {
-    // db.connect();
+    await db.connect();
     res.send(`Server is running in ${process.env.NODE_ENV} mode`);
-  } catch(err) {
-    res.send(err.stack)
+  } catch (err) {
+    res.send(err);
   }
 });
 
