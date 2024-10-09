@@ -1,6 +1,7 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { Button } from "@/components/ui/button";
 import { UserPlus } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,11 +11,14 @@ export default function Home() {
           Build your <span className="text-primary">gains</span> today.
         </h1>
         <p className="text-md tracking-tight text-muted-foreground mt-10 w-3/5">
-          Welcome to workout builder, the app that lets you organize, build, and customize your workouts. Try it for free.
+          Welcome to workout builder, the app that lets you organize, build, and
+          customize your workouts. Try it for free.
         </p>
-        <Button className="mt-10">
-          <UserPlus className="mr-2 h-4 w-4" /> Get Started
-        </Button>
+        <Link href="/sign-up">
+          <Button className="mt-10">
+            <UserPlus className="mr-2 h-4 w-4" /> Get Started
+          </Button>
+        </Link>
       </div>
     </MaxWidthWrapper>
   );
