@@ -37,6 +37,7 @@ export default class Database {
   // close connection
   async close() {
     try {
+      if (!this.pool) return;
       this.pool.close();
       console.log("database connection closed");
     } catch (err) {
