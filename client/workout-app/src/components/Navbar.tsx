@@ -16,10 +16,10 @@ const Navbar = () => {
     setActive(null);
   };
 
-  const user = {};
+  const user = null;
 
   return (
-    <>
+    <nav>
       <MaxWidthWrapper className="flex flex-row justify-between min-h-12 py-1 items-center">
         <div className="flex-grow flex-1">
           <Link href="/" onClick={handleLogoClick}>
@@ -41,8 +41,9 @@ const Navbar = () => {
         ) : (
           <div className="flex-grow flex-1 flex">
             <div className="ml-auto flex gap-1">
+              <div className="w-px h-full bg-foreground/5"></div>
               <Link
-                href="/sign-in"
+                href="/auth/sign-in"
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
                   "font-bold"
@@ -50,8 +51,9 @@ const Navbar = () => {
               >
                 Sign In
               </Link>
+              <div className="w-px h-full bg-foreground/5"></div>
               <Link
-                href="/sign-up"
+                href="/auth/sign-up"
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
                   "font-bold"
@@ -66,7 +68,7 @@ const Navbar = () => {
       <MaxWidthWrapper>
         <div className="h-px bg-foreground/5"></div>
       </MaxWidthWrapper>
-    </>
+    </nav>
   );
 };
 
