@@ -21,13 +21,13 @@ const connectToDB = async () => {
   }
 
   return client.db(dbName);
-}
+};
 
 const closeDB = async () => {
   if (!connected) return;
 
   client.close();
   connected = false;
-}
+};
 
 export { connectToDB, closeDB, client };

@@ -18,26 +18,14 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).send("internal server error");
 });
 
-const startServer = () => {
-  const server = app.listen(PORT, () => {
-    debug(`express listening on port ${chalk.green(PORT)}`);
-  });
-
-  process.on("SIGINT", () => {
-    debug("Shutting down server...");
-    server.close(() => {
-      debug("Server shut down successfully");
-      process.exit(0);
-    });
-  });
-};
-
 (async function start() {
   debug("starting server...");
   try {
     debug("preparing nextApp...");
     await nextApp.prepare();
-    startServer();
+    app.listen(PORT, () => {
+      debug(`express listening on port ${chalk.green(PORT)}`);
+    });
   } catch (err) {
     debug(`error preparing nextApp: ${chalk.red(err)}`);
   }
