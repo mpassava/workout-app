@@ -43,7 +43,7 @@ const Navbar = () => {
             <div className="ml-auto flex gap-1">
               <div className="w-px h-full bg-foreground/5"></div>
               <Link
-                href="/auth/sign-in"
+                href="/sign-in"
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
                   "font-bold"
@@ -53,7 +53,7 @@ const Navbar = () => {
               </Link>
               <div className="w-px h-full bg-foreground/5"></div>
               <Link
-                href="/auth/sign-up"
+                href="/sign-up"
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
                   "font-bold"

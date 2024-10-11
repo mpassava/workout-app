@@ -14,7 +14,7 @@ export default function Home() {
           Welcome to workout builder, the app that lets you organize, build, and
           customize your workouts. Try it for free.
         </p>
-        <Link href="/auth/sign-up">
+        <Link href="/sign-up">
           <Button className="mt-10">
             <UserPlus className="mr-2 h-4 w-4" /> Get Started
           </Button>
