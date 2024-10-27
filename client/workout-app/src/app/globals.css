@@ -59,9 +59,12 @@
 }
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border caret-transparent;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  input, textarea, select {
+    @apply caret-black;
   }
 }
