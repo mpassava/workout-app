@@ -10,9 +10,7 @@ const debug = debugModule("server");
 const app = express();
 
 app.use(morgan("tiny"));
-
 app.use((req: Request, res: Response) => nextHandler(req, res));
-
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   debug(`internal error: ${err}`);
   res.status(500).send("internal server error");
