@@ -20,7 +20,6 @@ const Providers = ({children}: PropsWithChildren) => {
           },
         }),
       ],
-      transformer: undefined,
     })
   );
 
