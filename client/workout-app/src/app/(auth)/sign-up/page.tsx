@@ -8,22 +8,22 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { authCredentialsValidator, TauthCredentialsValidator } from "@/lib/validators/account-credentials-validator";
+import { AuthCredentialsValidator, TAuthCredentialsValidator } from "@/lib/validators/account-credentials-validator";
 
-export default function SignUp() {
+const Page = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<TauthCredentialsValidator>({
-    resolver: zodResolver(authCredentialsValidator),
+  } = useForm<TAuthCredentialsValidator>({
+    resolver: zodResolver(AuthCredentialsValidator),
   });
 
   const formSubmit = ({
     username,
     email,
     password,
-  }: TauthCredentialsValidator) => {
+  }: TAuthCredentialsValidator) => {
     // TODO send data to server
   };
 
@@ -86,3 +86,5 @@ export default function SignUp() {
     </>
   );
 }
+
+export default Page;

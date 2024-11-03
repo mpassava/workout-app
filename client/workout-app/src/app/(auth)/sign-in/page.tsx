@@ -1,5 +1,7 @@
-export default function SignIn () {
+const Page = () => {
   return (
     <div>Sign In Page</div>
   )
 }
+
+export default Page;

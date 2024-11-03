@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const authCredentialsValidator = z.object({
+export const AuthCredentialsValidator = z.object({
   username: z.string(),
   email: z.string().email(),
   password: z
@@ -8,6 +8,6 @@ export const authCredentialsValidator = z.object({
     .min(8, { message: "Password must be at least 8 characters long" }),
 });
 
-export type TauthCredentialsValidator = z.infer<
-  typeof authCredentialsValidator
+export type TAuthCredentialsValidator = z.infer<
+  typeof AuthCredentialsValidator
 >;
