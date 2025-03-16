@@ -30,7 +30,7 @@ const Page = () => {
   return (
     <>
       <div className="container relative pt-20 flex flex-col items-center justify-center lg:px-0">
-        <div className="mx-auto sm:w-96 w-full flex flex-col justify-center space-y-6">
+        <div className="mx-auto w-96 flex flex-col justify-center space-y-6">
           <div className="flex flex-col items-center text-center space-y-2">
             <h1 className="text-2xl font-bold">Create an account</h1>
             <Link
